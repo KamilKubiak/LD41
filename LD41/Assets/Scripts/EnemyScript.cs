@@ -122,10 +122,11 @@ public abstract class EnemyScript : Character
         remainingMovementPoints -= amount;
     }
 
-    public void TakeDamage(int shotDamage)
+    public void TakeDamage(int shotDamage,Vector2 hitVector)
     {
         currentHitPoints -= shotDamage;
         injuryAudioSource.PlayOneShot(injuryClips[Random.Range(0, injuryClips.Length)]);
+        SpawnBloodParticles(hitVector);
         if (currentHitPoints <= 0)
         {
             Die();

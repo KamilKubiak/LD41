@@ -13,6 +13,8 @@ public class UIController : Singleton<UIController>
     Text HitpointText;
     [SerializeField]
     Text EndLevelText;
+    [SerializeField]
+    Text EnemyTurnText;
     public void SetMovementCostTextValue(int cost)
     {
         MovementCostText.text = cost.ToString();
@@ -31,5 +33,18 @@ public class UIController : Singleton<UIController>
     internal void EnableEndLevelText()
     {
         EndLevelText.enabled = true;
+    }
+
+    internal void EnemyTurnNotification(bool v)
+    {
+        EnemyTurnText.enabled = v;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        }
     }
 }

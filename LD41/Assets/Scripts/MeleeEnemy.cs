@@ -41,6 +41,7 @@ public class MeleeEnemy : EnemyScript
                 }
             }
         } while (canAttack);
+        StartAnimatingWalk();
     }
 
 

@@ -28,10 +28,12 @@ public class TurnController : Singleton<TurnController>
            
             yield return StartCoroutine(player.ExecuteTurn());
             //Debug.Log(enemies.Count);
+            UIController.Instance.EnemyTurnNotification(true);
             foreach (var enemy in enemies)
             {
                 yield return StartCoroutine(enemy.ExecuteTurn());
             }
+            UIController.Instance.EnemyTurnNotification(false);
             if (enemies.Count == 0)
             {
                 LoadNextLevel();

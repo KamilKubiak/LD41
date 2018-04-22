@@ -348,7 +348,7 @@ MonoBehaviour:
   attackCost: 3
   remainingMovementPoints: 0
   speed: 5
-  damagePerHit: 0
+  damagePerHit: 5
   startingHitPoints: 30
   shootingRange: 6
   gunTransform: {fileID: 4542253664386190}

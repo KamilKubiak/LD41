@@ -107,5 +107,11 @@ public abstract class WalkingArea : MonoBehaviour {
         }
     }
 
-    
+    private void OnDisable()
+    {
+        TileClicked -= OnTileClicked;
+        TileCleared -= ClearTileRender;
+    }
+
+
 }
